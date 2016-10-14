@@ -47,13 +47,6 @@ export default {
 <style lang="scss">
   @import './common/styles/index.scss';
 
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s
-  }
-  .fade-enter, .fade-leave-active {
-    opacity: 0
-  }
-
   #header {
     position: fixed;
     left: 15px;
