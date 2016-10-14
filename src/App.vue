@@ -2,36 +2,57 @@
   <div id="site-container">
     <div id="header">
       <button
-        v-on:click="overlay = !overlay"
+        v-on:click="deployOverlay('link-menu')"
         v-show="!overlay"
+        data-action="header-menu"
         class="menu"
         >MENÜ</button>
     </div>
-    <div id="overlay" v-show="overlay">
-      <button
-        v-on:click="overlay = !overlay"
-        v-show="overlay"
-        class="close"
-        />
-    </div>
+    <transition name="fade">
+      <div id="overlay" v-show="overlay">
+        <MenuLinks />
+        <button
+          v-on:click="revertOverlay"
+          v-show="overlay"
+          class="close"
+          />
+      </div>
+    </transition>
     <Introduction />
   </div>
 </template>
 
 <script>
 import Introduction from './components/Introduction'
+import MenuLinks from './components/MenuLinks'
 export default {
   components: {
-    Introduction
+    Introduction,
+    MenuLinks
   },
   data: () => ({
     overlay: false
-  })
+  }),
+  methods: {
+    deployOverlay (contentDesired) {
+      this.overlay = true
+    },
+    revertOverlay () {
+      this.overlay = false
+    }
+  }
 }
 </script>
 
 <style lang="scss">
   @import './common/styles/index.scss';
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+  }
+  .fade-enter, .fade-leave-active {
+    opacity: 0
+  }
 
   #header {
     position: fixed;
@@ -58,8 +79,31 @@ export default {
     right: 0;
     background: black;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ul {
+      padding: 0;
+      margin: 0;
+      text-transform: uppercase;
+      text-align: center;
+
+      li {
+        list-style: none;
+        font-size: 18px;
+        padding-bottom: 5px;
+
+        a {
+          color: $gold;
+          text-decoration: none;
+        }
+      }
+    }
+
     button {
       border: none;
+
       &.close {
         position: absolute;
         right: 10px;
