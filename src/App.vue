@@ -1,9 +1,12 @@
 <template>
-  <Introduction />
+  <div id="site-container">
+    <div id="header">Menu, Icons</div>
+    <Introduction />
+  </div>
 </template>
 
 <script>
-import Introduction from './components/sections/Introduction'
+import Introduction from './components/Introduction'
 export default {
   components: {
     Introduction
@@ -11,6 +14,10 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="scss">
+  @import './common/styles/index.scss';
 
+  #header {
+    position: absolute;
+  }
 </style>

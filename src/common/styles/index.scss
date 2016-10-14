@@ -1,0 +1,31 @@
+@import url(
+  'https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed'
+);
+
+// colors
+$gold: #B6A05D;
+$grey: #F7F7F7;
+
+// reset
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: $gold;
+  margin: 0;
+}
+
+// forms
+
+button {
+  font-family: 'Roboto Condensed', sans-serif;
+  border: 1px solid $gold;
+  background: none;
+  color: $gold;
+  text-transform: uppercase;
+  padding: 15px 20px;
+
+  &--filled {
+    color: white;
+    background: $gold;
+  }
+}
