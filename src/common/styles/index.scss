@@ -25,11 +25,6 @@ button {
   padding: 15px 20px;
   letter-spacing: 1px;
 
-  &.reset {
-    border: none;
-    padding: 0;
-  }
-
   &--filled {
     color: white;
     background: $gold;
