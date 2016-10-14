@@ -27,7 +27,13 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: black;
+    background: black url(
+      https://raw.githubusercontent.com/awitherow/immerundewig/master/src/assets/img/intro_bg.png
+      ) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
 
   .spotlight {
