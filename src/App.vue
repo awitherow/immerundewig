@@ -2,7 +2,7 @@
   <div id="site-container">
     <div id="header">
       <button
-        v-on:click="deployOverlay('link-menu')"
+        v-on:click="toggleOverlay('link-menu')"
         v-show="!overlay"
         data-action="header-menu"
         class="menu"
@@ -11,10 +11,10 @@
     <transition name="fade">
       <div id="overlay" v-show="overlay">
         <MenuLinks
-          v-bind:onClickLink="revertOverlay"
+          v-bind:onClickLink="toggleOverlay"
           />
         <button
-          v-on:click="revertOverlay"
+          v-on:click="toggleOverlay"
           v-show="overlay"
           class="close"
           />
@@ -36,11 +36,8 @@ export default {
     overlay: false
   }),
   methods: {
-    deployOverlay (contentDesired) {
-      this.overlay = true
-    },
-    revertOverlay () {
-      this.overlay = false
+    toggleOverlay (contentDesired) {
+      this.overlay = !this.overlay
     }
   }
 }
