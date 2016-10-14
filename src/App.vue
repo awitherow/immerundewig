@@ -10,7 +10,9 @@
     </div>
     <transition name="fade">
       <div id="overlay" v-show="overlay">
-        <MenuLinks />
+        <MenuLinks
+          v-bind:onClickLink="revertOverlay"
+          />
         <button
           v-on:click="revertOverlay"
           v-show="overlay"
