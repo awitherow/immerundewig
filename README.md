@@ -15,4 +15,9 @@ npm run dev
 npm run build
 ```
 
+## TODO
+
+- gh pages https://help.github.com/articles/creating-project-pages-using-the-command-line/
+
+
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
