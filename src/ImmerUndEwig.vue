@@ -7,7 +7,7 @@
       />
 
     <transition name="fade">
-      <div id="overlay" v-show="menuLinks">
+      <div class="overlay" id="menu-links-overlay" v-show="menuLinks">
         <MenuLinks
           v-bind:onClickLink="toggleMenuLinks"
           />
@@ -51,18 +51,7 @@ export default {
 <style lang="scss">
   @import './common/styles/index.scss';
 
-  #overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: black;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+  #menu-links-overlay {
     ul {
       padding: 0;
       margin: 0;
