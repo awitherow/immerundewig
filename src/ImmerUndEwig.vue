@@ -8,6 +8,8 @@
         data-action="header-menu"
         class="menu-button"
         >MENÜ</button>
+      <div class="social-icons">
+      </div>
     </div>
 
     <transition name="fade">
@@ -24,16 +26,20 @@
     </transition>
 
     <Introduction />
+    <Studio />
   </div>
 </template>
 
 <script>
-import Introduction from './components/Introduction'
 import MenuLinks from './components/MenuLinks'
+
+import Introduction from './components/Introduction'
+import Studio from './components/Studio'
 export default {
   components: {
+    MenuLinks,
     Introduction,
-    MenuLinks
+    Studio
   },
   data: () => ({
     overlay: false
