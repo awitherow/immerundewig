@@ -40,10 +40,10 @@
 </template>
 
 <script>
-import MenuLinks from './components/MenuLinks'
+import MenuLinks from './components/elements/MenuLinks'
 
-import Introduction from './components/Introduction'
-import Studio from './components/Studio'
+import Introduction from './components/views/Introduction'
+import Studio from './components/views/Studio'
 export default {
   components: {
     MenuLinks,
