@@ -2,8 +2,8 @@
   <div id="header">
     <div class="container">
       <button
-        v-on:click="toggleOverlay('link-menu')"
-        v-show="!overlay"
+        v-on:click="toggleMenuLinks('link-menu')"
+        v-show="!menuLinks"
         class="menu-button"
         >MENÜ</button>
       <div class="social-icons">
@@ -22,7 +22,7 @@
 <script>
 export default {
   name: 'Header',
-  props: ['toggleOverlay', 'overlay'],
+  props: ['toggleMenuLinks', 'menuLinks'],
   data: () => ({
     socialIcons: [
       {

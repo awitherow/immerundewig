@@ -2,18 +2,18 @@
   <div id="site-container">
 
     <Header
-      :toggleOverlay="toggleOverlay"
-      :overlay="overlay"
+      :toggleMenuLinks="toggleMenuLinks"
+      :menuLinks="menuLinks"
       />
 
     <transition name="fade">
-      <div id="overlay" v-show="overlay">
+      <div id="overlay" v-show="menuLinks">
         <MenuLinks
-          v-bind:onClickLink="toggleOverlay"
+          v-bind:onClickLink="toggleMenuLinks"
           />
         <button
-          v-on:click="toggleOverlay"
-          v-show="overlay"
+          v-on:click="toggleMenuLinks"
+          v-show="menuLinks"
           class="close"
           />
       </div>
@@ -38,11 +38,11 @@ export default {
     Header
   },
   data: () => ({
-    overlay: false
+    menuLinks: false
   }),
   methods: {
-    toggleOverlay (contentDesired) {
-      this.overlay = !this.overlay
+    toggleMenuLinks (contentDesired) {
+      this.menuLinks = !this.menuLinks
     }
   }
 }
