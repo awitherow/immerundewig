@@ -2,13 +2,22 @@
   <div id="site-container">
 
     <div id="header">
-      <button
-        v-on:click="toggleOverlay('link-menu')"
-        v-show="!overlay"
-        data-action="header-menu"
-        class="menu-button"
-        >MENÜ</button>
-      <div class="social-icons">
+      <div class="container">
+        <button
+          v-on:click="toggleOverlay('link-menu')"
+          v-show="!overlay"
+          data-action="header-menu"
+          class="menu-button"
+          >MENÜ</button>
+        <div class="social-icons">
+          <ul>
+            <li v-for="social in socialIcons">
+              <a v-bind:href="social.href">
+                <img class="social-icons__icon" v-bind:src="social.img" />
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -42,7 +51,17 @@ export default {
     Studio
   },
   data: () => ({
-    overlay: false
+    overlay: false,
+    socialIcons: [
+      {
+        href: 'https://www.instagram.com/immerundewigtattooing/?hl=en',
+        img: '/static/icons/instagram.svg'
+      },
+      {
+        href: 'https://www.facebook.com/immerundewigtattooing',
+        img: '/static/icons/facebook.svg'
+      }
+    ]
   }),
   methods: {
     toggleOverlay (contentDesired) {
@@ -56,9 +75,15 @@ export default {
   @import './common/styles/index.scss';
 
   #header {
+    width: 100%;
     position: absolute;
-    left: 15px;
-    top: 35px;
+
+    .container {
+      display: flex;
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 15px 35px;
+    }
 
     .menu-button {
       font-size: 16px;
@@ -69,9 +94,23 @@ export default {
     }
 
     .social-icons {
-      display: flex;
-      position: absolute;
-      right: 0;
+      margin-left: auto;
+
+      &__icon {
+        &:hover {
+          color: white;
+        }
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          display: inline-block;
+          padding: 0 5px;
+        }
+      }
     }
   }
 
