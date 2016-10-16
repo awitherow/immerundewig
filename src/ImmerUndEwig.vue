@@ -1,25 +1,10 @@
 <template>
   <div id="site-container">
 
-    <div id="header">
-      <div class="container">
-        <button
-          v-on:click="toggleOverlay('link-menu')"
-          v-show="!overlay"
-          data-action="header-menu"
-          class="menu-button"
-          >MENÜ</button>
-        <div class="social-icons">
-          <ul>
-            <li v-for="social in socialIcons">
-              <a v-bind:href="social.href">
-                <img class="social-icons__icon" v-bind:src="social.img" />
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <Header
+      :toggleOverlay="toggleOverlay"
+      :overlay="overlay"
+      />
 
     <transition name="fade">
       <div id="overlay" v-show="overlay">
@@ -41,6 +26,7 @@
 
 <script>
 import MenuLinks from './components/elements/MenuLinks'
+import Header from './components/elements/Header'
 
 import Introduction from './components/views/Introduction'
 import Studio from './components/views/Studio'
@@ -48,20 +34,11 @@ export default {
   components: {
     MenuLinks,
     Introduction,
-    Studio
+    Studio,
+    Header
   },
   data: () => ({
-    overlay: false,
-    socialIcons: [
-      {
-        href: 'https://www.instagram.com/immerundewigtattooing/?hl=en',
-        img: '/static/icons/instagram.svg'
-      },
-      {
-        href: 'https://www.facebook.com/immerundewigtattooing',
-        img: '/static/icons/facebook.svg'
-      }
-    ]
+    overlay: false
   }),
   methods: {
     toggleOverlay (contentDesired) {
@@ -73,46 +50,6 @@ export default {
 
 <style lang="scss">
   @import './common/styles/index.scss';
-
-  #header {
-    width: 100%;
-    position: absolute;
-
-    .container {
-      display: flex;
-      max-width: 750px;
-      margin: 0 auto;
-      padding: 15px 35px;
-    }
-
-    .menu-button {
-      font-size: 16px;
-      padding: 0;
-      padding-bottom: 2px;
-      border: none;
-      border-bottom: 2px solid $gold;
-    }
-
-    .social-icons {
-      margin-left: auto;
-
-      &__icon {
-        &:hover {
-          color: white;
-        }
-      }
-
-      ul {
-        list-style: none;
-        padding: 0;
-
-        li {
-          display: inline-block;
-          padding: 0 5px;
-        }
-      }
-    }
-  }
 
   #overlay {
     position: absolute;
