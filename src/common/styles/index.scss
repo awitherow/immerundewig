@@ -25,6 +25,10 @@ button {
   padding: 15px 20px;
   letter-spacing: 1px;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &--filled {
     color: white;
     background: $gold;
