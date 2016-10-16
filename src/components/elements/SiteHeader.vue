@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: 'Header',
+  name: 'SiteHeader',
   props: [
     'toggleMenuLinks',
     'menuLinks'

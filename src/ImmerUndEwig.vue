@@ -1,7 +1,7 @@
 <template>
   <div id="site-container">
 
-    <Header
+    <SiteHeader
       :toggleMenuLinks="toggleMenuLinks"
       :menuLinksActive="menuLinksActive"
       />
@@ -13,13 +13,13 @@
 
     <Introduction />
     <Studio />
-    
+
   </div>
 </template>
 
 <script>
 import MenuLinks from './components/elements/MenuLinks'
-import Header from './components/elements/Header'
+import SiteHeader from './components/elements/SiteHeader'
 
 import Introduction from './components/views/Introduction'
 import Studio from './components/views/Studio'
@@ -28,7 +28,7 @@ export default {
     MenuLinks,
     Introduction,
     Studio,
-    Header
+    SiteHeader
   },
   data: () => ({
     menuLinksActive: false
