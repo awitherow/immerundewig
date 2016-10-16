@@ -1,13 +1,15 @@
 <template>
   <div id="site-container">
+
     <div id="header">
       <button
         v-on:click="toggleOverlay('link-menu')"
         v-show="!overlay"
         data-action="header-menu"
-        class="menu"
+        class="menu-button"
         >MENÜ</button>
     </div>
+
     <transition name="fade">
       <div id="overlay" v-show="overlay">
         <MenuLinks
@@ -20,6 +22,7 @@
           />
       </div>
     </transition>
+
     <Introduction />
   </div>
 </template>
@@ -47,19 +50,22 @@ export default {
   @import './common/styles/index.scss';
 
   #header {
-    position: fixed;
+    position: absolute;
     left: 15px;
     top: 35px;
 
-    button {
+    .menu-button {
       font-size: 16px;
+      padding: 0;
       padding-bottom: 2px;
+      border: none;
+      border-bottom: 2px solid $gold;
+    }
 
-      &.menu {
-        border: none;
-        padding: 0;
-        border-bottom: 2px solid $gold;
-      }
+    .social-icons {
+      display: flex;
+      position: absolute;
+      right: 0;
     }
   }
 
