@@ -2,6 +2,11 @@
   <section id="introduction">
 
     <div class="spotlight">
+      <img
+        class="logo"
+        src="/static/icons/logo.svg"
+        alt="immerundewig logo"
+        />
       <p>{{ title }}</p>
       <p>{{ address }}</p>
       <button>{{ contact }}</button>
@@ -28,7 +33,7 @@ export default {
     justify-content: center;
     align-items: center;
     background: black url(
-      https://raw.githubusercontent.com/awitherow/immerundewig/master/src/assets/img/intro_bg.png
+      '/static/img/intro_bg.png'
       ) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
