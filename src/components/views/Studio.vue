@@ -7,7 +7,6 @@
 <script>
 export default {
   name: 'MenuLinks',
-  props: ['onClickLink'],
   data: () => ({
     aboutText: 'immer und ewig tattooing seit mehr als 6 jahren für höchste qualität und kreativität. 5 feste tatoowierer stehen euch zur verfügung. von oldschool tattoos bis modern zeugs.'
   })

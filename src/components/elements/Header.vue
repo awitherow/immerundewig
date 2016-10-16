@@ -22,7 +22,10 @@
 <script>
 export default {
   name: 'Header',
-  props: ['toggleMenuLinks', 'menuLinks'],
+  props: [
+    'toggleMenuLinks',
+    'menuLinks'
+  ],
   data: () => ({
     socialIcons: [
       {

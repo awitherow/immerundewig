@@ -13,6 +13,7 @@
 
     <Introduction />
     <Studio />
+    
   </div>
 </template>
 

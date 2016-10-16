@@ -1,6 +1,10 @@
 <template>
   <transition name="fade">
-    <div class="overlay" id="menu-links-overlay" v-show="menuLinksActive">
+    <div
+      class="overlay"
+      id="menu-links-overlay"
+      v-show="menuLinksActive">
+
       <ul>
         <li v-for="link in linkList">
           <a v-bind:href="link.href">
@@ -8,11 +12,13 @@
           </a>
         </li>
       </ul>
+
       <button
         v-on:click="toggleMenuLinks"
         v-show="menuLinksActive"
         class="close"
         />
+
     </div>
   </transition>
 </template>
@@ -20,7 +26,10 @@
 <script>
 export default {
   name: 'MenuLinks',
-  props: ['menuLinksActive', 'toggleMenuLinks'],
+  props: [
+    'menuLinksActive',
+    'toggleMenuLinks'
+  ],
   data: () => ({
     linkList: [
       {
