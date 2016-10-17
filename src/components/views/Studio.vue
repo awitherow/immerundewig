@@ -1,6 +1,12 @@
 <template>
-  <div name="studio" class="studio">
-    <p class="studio__about"> {{ aboutText }} </p>
+  <div id="studio">
+    <div name="studio" class="studio">
+      <p class="studio__about"> {{ aboutText }} </p>
+    </div>
+    <div class="slider">
+      <img src="/static/img/studio.png" />
+      <img src="/static/img/studio2.png" />
+    </div>
   </div>
 </template>
 
@@ -37,6 +43,10 @@ export default {
     max-width: 500px;
     line-height: 24px;
   }
+}
+
+img {
+  max-width: 100vw;
 }
 
 </style>
