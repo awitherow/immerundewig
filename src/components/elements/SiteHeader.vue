@@ -9,7 +9,7 @@
       <div class="social-icons">
         <ul>
           <li v-for="social in socialIcons">
-            <a v-bind:href="social.href">
+            <a target="_blank" v-bind:href="social.href">
               <img class="social-icons__icon" v-bind:src="social.img" />
             </a>
           </li>
