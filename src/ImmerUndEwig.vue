@@ -34,7 +34,7 @@ export default {
     menuLinksActive: false
   }),
   methods: {
-    toggleMenuLinks (contentDesired) {
+    toggleMenuLinks () {
       this.menuLinksActive = !this.menuLinksActive
     }
   }
