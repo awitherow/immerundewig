@@ -27,6 +27,8 @@ export default {
 </script>
 
 <style lang="scss">
+  $break-tablet: 768px;
+
   #introduction {
     height: 100vh;
     display: flex;
@@ -48,6 +50,10 @@ export default {
     letter-spacing: 7px;
     line-height: 28px;
     padding: 0 25px;
+
+    @media(min-width: $break-tablet) {
+      letter-spacing: 15px;
+    }
 
     p {
       margin: 0;

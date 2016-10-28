@@ -3,7 +3,7 @@
     <div name="studio" class="studio">
       <p class="studio__about"> {{ aboutText }} </p>
     </div>
-    <div class="slider">
+    <div class="studio__slider slider">
       <img src="/static/img/studio.png" />
       <img src="/static/img/studio2.png" />
     </div>
@@ -40,13 +40,28 @@ export default {
     letter-spacing: 2px;
     font-size: 12px;
     text-align: center;
-    max-width: 500px;
+    max-width: 550px;
     line-height: 24px;
+  }
+
+  &__slider {
+    background: #f7f7f7;
+    background: -moz-linear-gradient(top,  #F7F7F7 0%, #F7F7F7 50%, #F7F7F7 50%, #FFFFFF 50%, #FFFFFF 100%);
+    background: -webkit-linear-gradient(top,  #F7F7F7 0%,#F7F7F7 50%,#F7F7F7 50%,#FFFFFF 50%,#FFFFFF 100%);
+    background: linear-gradient(to bottom,  #F7F7F7 0%,#F7F7F7 50%,#FFFFFF 50%,#FFFFFF 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f7f7f7',GradientType=0 );
+
   }
 }
 
+
+
 img {
   max-width: 100vw;
+
+  @media(min-width: 768px){
+    max-width: 856px;
+  }
 }
 
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div id="artists">
-    <div class="artist-list" v-for="artist in artists">
+    <div class="artist" v-for="artist in artists">
       <img :src="artist.mainImage" />
-      <div class="artist-list__info">
+      <div class="artist__info">
         <h2>{{ artist.name }}</h2>
         <p v-for="p in artist.introParagraphs">
             {{ p }}
@@ -32,7 +32,9 @@ export default {
     #artists {
         margin: 75px auto;
 
-        .artist-list {
+        .artist {
+            margin-bottom: 90px;
+            
             h2,
             p {
                 font-size: 14px;
@@ -57,6 +59,26 @@ export default {
 
             &__info {
                 padding: 20px;
+            }
+            
+            @media(min-width: 1000px) {
+                display: flex;
+
+                h2 { /* how to add line to the other side of the name? */}
+
+                &:nth-child(even) {
+                    flex-direction: row-reverse;
+                }
+
+                img {
+                    max-width: 547px;
+                    max-height: 642px;
+                }
+
+                &__info {
+                    max-width: 412px;
+                    margin: 50px 136px auto 185px;
+                }
             }
         }
     }

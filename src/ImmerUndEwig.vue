@@ -45,5 +45,15 @@ export default {
 </script>
 
 <style lang="scss">
-@import './common/styles/index'
+@import './common/styles/index';
+
+#app {
+  background: white;
+}
+
+#site-container {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+}
 </style>
