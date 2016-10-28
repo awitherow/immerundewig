@@ -13,6 +13,7 @@
 
     <Introduction />
     <Studio />
+    <Artists />
 
   </div>
 </template>
@@ -23,12 +24,14 @@ import SiteHeader from './components/elements/SiteHeader'
 
 import Introduction from './components/views/Introduction'
 import Studio from './components/views/Studio'
+import Artists from './components/views/Artists'
 export default {
   components: {
     MenuLinks,
+    SiteHeader,
     Introduction,
     Studio,
-    SiteHeader
+    Artists
   },
   data: () => ({
     menuLinksActive: false
@@ -42,5 +45,5 @@ export default {
 </script>
 
 <style lang="scss">
-
+@import './common/styles/index'
 </style>

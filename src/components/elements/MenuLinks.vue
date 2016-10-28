@@ -7,7 +7,7 @@
 
       <ul>
         <li v-for="link in linkList">
-          <a @click="toggleMenuLinks" v-bind:href.prevent="link.href" >
+          <a @click="toggleMenuLinks" v-bind:href="link.href" >
             {{ link.text }}
           </a>
         </li>

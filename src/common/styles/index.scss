@@ -29,9 +29,24 @@ button {
     cursor: pointer;
   }
 
-  &--filled {
+  &.filled {
     color: white;
     background: $gold;
+  }
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  button {
+    min-width: 130px;
+    flex: auto;
+    
+    &:first-of-type {
+      margin-right: 10px;
+    }
   }
 }
 
