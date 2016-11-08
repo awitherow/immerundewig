@@ -14,6 +14,7 @@
     <Introduction />
     <Studio />
     <Artists />
+    <Footer />
 
   </div>
 </template>
@@ -25,13 +26,16 @@ import SiteHeader from './components/elements/SiteHeader'
 import Introduction from './components/views/Introduction'
 import Studio from './components/views/Studio'
 import Artists from './components/views/Artists'
+import Footer from './components/views/Footer'
+
 export default {
   components: {
     MenuLinks,
     SiteHeader,
     Introduction,
     Studio,
-    Artists
+    Artists,
+    Footer
   },
   data: () => ({
     menuLinksActive: false
