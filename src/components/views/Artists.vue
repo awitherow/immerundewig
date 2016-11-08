@@ -77,7 +77,7 @@ export default {
 
                 &__info {
                     max-width: 412px;
-                    margin: 50px 136px auto 185px;
+                    margin: 50px auto auto auto;
                 }
             }
         }
