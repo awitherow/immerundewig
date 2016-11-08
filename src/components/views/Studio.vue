@@ -5,7 +5,6 @@
     </div>
     <div class="studio__slider slider">
       <img src="/static/img/studio.png" />
-      <img src="/static/img/studio2.png" />
     </div>
   </div>
 </template>
