@@ -9,7 +9,9 @@
         />
       <p>{{ title }}</p>
       <p>{{ address }}</p>
-      <button>{{ contact }}</button>
+      <button
+        @click="activateMailApplication"
+      >{{ contact }}</button>
     </div>
 
   </section>
@@ -21,8 +23,16 @@ export default {
   data: () => ({
     title: 'immer und ewig tattooing',
     address: 'kleiner schäferkamp 33 / 20357 hamburg',
-    contact: 'nimm kontakt auf'
-  })
+    contact: 'nimm kontakt auf',
+    emailAddress: 'info@immerundewig-tattooing.de',
+    emailSubject: 'Generale Frage für Immerundewig',
+    emailBody: 'Danke für Ihre E-Mail! Bitte geben Sie Ihre Name, Ideen oder Wüsche unten an.'
+  }),
+  methods: {
+    activateMailApplication () {
+      window.location.href = `mailto:${this.emailAddress}?subject=${this.emailSubject}&body=${this.emailBody}`
+    }
+  }
 }
 </script>
 
