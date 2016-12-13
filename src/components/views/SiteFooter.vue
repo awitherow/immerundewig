@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'Footer',
+  name: 'SiteFooter',
   data: () => ({
     title: 'immer und ewig tattooing',
     address: 'kleiner schäferkamp 33 / 20357 hamburg',
