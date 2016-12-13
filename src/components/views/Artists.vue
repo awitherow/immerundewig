@@ -8,7 +8,9 @@
             {{ p }}
         </p>
         <div class="button-group">
-            <button class="filled">{{ arbeit }}</button>
+            <button
+              @click="toggleArtistOverlay(artist)"
+              class="filled">{{ arbeit }}</button>
             <button>{{ kontakt }}</button>
         </div>
       </div>
@@ -20,6 +22,9 @@
 import artists from '../../common/config/artists'
 export default {
   name: 'Artists',
+  props: [
+    'toggleArtistOverlay'
+  ],
   data: () => ({
     artists,
     arbeit: 'Arbeit ansehen',
@@ -34,7 +39,7 @@ export default {
 
         .artist {
             margin-bottom: 90px;
-            
+
             h2,
             p {
                 font-size: 14px;
@@ -60,7 +65,7 @@ export default {
             &__info {
                 padding: 20px;
             }
-            
+
             @media(min-width: 1000px) {
                 display: flex;
 

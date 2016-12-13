@@ -11,9 +11,18 @@
       :toggleMenuLinks="toggleMenuLinks"
       />
 
+    <ArtistOverlay
+      :artistOverlayActive="artistOverlayActive"
+      :toggleArtistOverlay="toggleArtistOverlay"
+      />
+
     <Introduction />
     <Studio />
-    <Artists />
+    <Artists
+      :toggleArtistOverlay="toggleArtistOverlay"
+      :activeArtist="activeArtist"
+      :artistOverlayActive="artistOverlayActive"
+      />
     <SiteFooter />
 
   </div>
@@ -22,6 +31,7 @@
 <script>
 import MenuLinks from './components/elements/MenuLinks'
 import SiteHeader from './components/elements/SiteHeader'
+import ArtistOverlay from './components/elements/ArtistOverlay'
 
 import Introduction from './components/views/Introduction'
 import Studio from './components/views/Studio'
@@ -35,14 +45,21 @@ export default {
     Introduction,
     Studio,
     Artists,
+    ArtistOverlay,
     SiteFooter
   },
   data: () => ({
-    menuLinksActive: false
+    menuLinksActive: false,
+    artistOverlayActive: false,
+    activeArtist: undefined
   }),
   methods: {
     toggleMenuLinks () {
       this.menuLinksActive = !this.menuLinksActive
+    },
+    toggleArtistOverlay (artist) {
+      this.activeArtist = artist
+      this.artistOverlayActive = !this.artistOverlayActive
     }
   }
 }
