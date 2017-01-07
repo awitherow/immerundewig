@@ -5,24 +5,25 @@
       id="artist-info-overlay"
       v-if="artistOverlayActive">
 
-      <div class="information">
-        <button
-          @click="toggleArtistOverlay"
-          v-show="artistOverlayActive"
-          class="close"
-          >
-          <img src="/static/icons/close.png" />
-        </button>
+      <div class="inner">
+        <div class="information">
+          <button
+            @click="toggleArtistOverlay"
+            v-show="artistOverlayActive"
+            class="close"
+            >
+            <img src="/static/icons/close.png" />
+          </button>
 
-        <h1>{{ activeArtist.name }}</h1>
-        <p>
-          {{ activeArtist.introParagraphs[0] }}
-        </p>
+          <h1>{{ activeArtist.name }}</h1>
+          <p>
+            {{ activeArtist.introParagraphs[0] }}
+          </p>
 
-      </div>
-
-      <div class="images" v-for="img in activeArtist.popupImages">
-        <img :src="img" />
+        </div>
+        <div class="images" v-for="img in activeArtist.popupImages">
+          <img :src="img" />
+        </div>
       </div>
 
     </div>
@@ -43,7 +44,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../../common/styles/index.scss';
 
 #artist-info-overlay {
@@ -51,31 +52,54 @@ export default {
   flex-direction: column;
   overflow-y: scroll;
 
-  .information {
-    text-align: center;
-    padding: 35px;
+  @media(min-width: 1024px) {
+    padding: 50px;
+  }
 
-    .close {
-      img {
-        height: 32px;
-        width: 32px;
+  @media(min-width: 768px) {
+    padding: 25px;
+
+    .inner .information {
+      position: relative;
+      .close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
       }
     }
+  }
 
-    h1 {
-      text-transform: uppercase;
-      font-size: 15px;
-      letter-spacing: 2px;
-      padding-top: 15px;
-    }
+  .inner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 
-    p {
-      font-family: 'Roboto';
-      font-size: 12px;
-      line-height: 24px;
-      letter-spacing: 2px;
-      font-weight: 300;
-      color: black;
+    .information {
+      text-align: center;
+      padding: 35px;
+
+      .close {
+        img {
+          height: 32px;
+          width: 32px;
+        }
+      }
+
+      h1 {
+        text-transform: uppercase;
+        font-size: 15px;
+        letter-spacing: 2px;
+        padding-top: 15px;
+      }
+
+      p {
+        font-family: 'Roboto';
+        font-size: 12px;
+        line-height: 24px;
+        letter-spacing: 2px;
+        font-weight: 300;
+        color: black;
+      }
     }
   }
 
