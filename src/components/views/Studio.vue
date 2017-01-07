@@ -59,7 +59,7 @@ img {
   max-width: 100vw;
 
   @media(min-width: 768px){
-    max-width: 856px;
+    max-width: 768px;
   }
 }
 

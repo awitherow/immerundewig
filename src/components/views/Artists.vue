@@ -39,11 +39,8 @@ export default {
         margin: 75px auto;
 
         .artist {
-            margin-bottom: 90px;
-
-            &:nth-child(even) {
-                background: $grey;
-            }
+            margin-bottom: 35px;
+            background: $grey;
 
             h2,
             p {
@@ -71,24 +68,38 @@ export default {
                 padding: 20px;
             }
 
-            @media(min-width: 1000px) {
+            @media(min-width: 768px) {
                 display: flex;
 
-                h2 { /* how to add line to the other side of the name? */}
+                h2 {
+                  margin-bottom: 20px;
+                  /* TODO: how to add line to the other side of the name? */
+                }
 
                 &:nth-child(even) {
                     flex-direction: row-reverse;
                 }
 
                 img {
-                    max-width: 547px;
-                    max-height: 642px;
+                    max-height: 330px;
                 }
 
                 &__info {
                     max-width: 412px;
-                    margin: 50px auto auto auto;
+                    padding: 20px 20px 0 20px;
                 }
+            }
+
+            @media(min-width: 1024px) {
+              img {
+                  max-width: 547px;
+                  max-height: 642px;
+              }
+
+              &__info {
+                padding: 20px;
+                margin: 50px auto auto auto;
+              }
             }
         }
     }
