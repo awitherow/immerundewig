@@ -12,6 +12,7 @@
       />
 
     <ArtistOverlay
+      :activeArtist="activeArtist"
       :artistOverlayActive="artistOverlayActive"
       :toggleArtistOverlay="toggleArtistOverlay"
       />
@@ -20,7 +21,6 @@
     <Studio />
     <Artists
       :toggleArtistOverlay="toggleArtistOverlay"
-      :activeArtist="activeArtist"
       :artistOverlayActive="artistOverlayActive"
       />
     <SiteFooter />

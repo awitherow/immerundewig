@@ -57,6 +57,8 @@ export default {
 @import '../../common/styles/index.scss';
 
 #menu-links-overlay {
+  align-items: center;
+  justify-content: center;
   ul {
     padding: 0;
     margin: 0;

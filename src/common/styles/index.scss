@@ -1,5 +1,5 @@
 @import url(
-  'https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed'
+  'https://fonts.googleapis.com/css?family=Roboto:300|Roboto+Condensed'
 );
 
 // colors
@@ -43,7 +43,7 @@ button {
   button {
     min-width: 130px;
     flex: auto;
-    
+
     &:first-of-type {
       margin-right: 10px;
     }
@@ -59,10 +59,13 @@ button {
   bottom: 0;
   right: 0;
   background: black;
-
   display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 9;
+
+  &.white {
+    background: white;
+    color: $gold;
+  }
 }
 
 // animations
