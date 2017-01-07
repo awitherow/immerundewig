@@ -34,11 +34,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../common/styles/index';
     #artists {
         margin: 75px auto;
 
         .artist {
             margin-bottom: 90px;
+
+            &:nth-child(even) {
+                background: $grey;
+            }
 
             h2,
             p {
