@@ -50,23 +50,28 @@ export default {
 #artist-info-overlay {
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
-
-  @media(min-width: 1024px) {
-    padding: 50px;
-  }
 
   @media(min-width: 768px) {
-    padding: 25px;
+    padding: 25px 25px 0 25px;
+    background: rgba(0,0,0,0.5);
 
-    .inner .information {
-      position: relative;
-      .close {
-        position: absolute;
-        right: 10px;
-        top: 10px;
+    .inner {
+      background: white;
+      padding: 25px;
+      overflow-y: scroll;
+      .information {
+        position: relative;
+        .close {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+        }
       }
     }
+  }
+
+  @media(min-width: 1024px) {
+    padding: 50px 50px 0 50px;
   }
 
   .inner {
