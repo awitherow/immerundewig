@@ -1,6 +1,6 @@
 const artists = [
   {
-    'mainImage': '/static/img/susanne.png',
+    'mainImage': '/static/img/susi_00.png',
     'name': 'Susanne König',
     'introParagraphs': [
       'Drown in Susanne Königs beautiful blend of blackwork and dotwork with her lovely illustrative tattoos.',
@@ -15,7 +15,7 @@ const artists = [
     ]
   },
   {
-    'mainImage': '/static/img/christian.png',
+    'mainImage': '/static/img/christian_00.png',
     'name': 'Christian Hensen',
     'introParagraphs': [
       'Drown in Susanne Königs beautiful blend of blackwork and dotwork with her lovely illustrative tattoos.',
@@ -30,7 +30,7 @@ const artists = [
     ]
   },
   {
-    'mainImage': '/static/img/julia.png',
+    'mainImage': '/static/img/julia_00.png',
     'name': 'Julia Wenzel',
     'introParagraphs': [
       'Drown in Susanne Königs beautiful blend of blackwork and dotwork with her lovely illustrative tattoos.',
@@ -45,7 +45,7 @@ const artists = [
     ]
   },
   {
-    'mainImage': '/static/img/doro.png',
+    'mainImage': '/static/img/doro_00.png',
     'name': 'Doro',
     'introParagraphs': [
       'Drown in Susanne Königs beautiful blend of blackwork and dotwork with her lovely illustrative tattoos.',
