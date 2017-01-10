@@ -17,12 +17,16 @@
       :toggleArtistOverlay="toggleArtistOverlay"
       />
 
+
     <Introduction />
-    <Studio />
-    <Artists
-      :toggleArtistOverlay="toggleArtistOverlay"
-      :artistOverlayActive="artistOverlayActive"
-      />
+
+    <div class="site-inner">
+      <Studio />
+      <Artists
+        :toggleArtistOverlay="toggleArtistOverlay"
+        :artistOverlayActive="artistOverlayActive"
+        />
+    </div>
     <SiteFooter />
 
   </div>
@@ -60,6 +64,12 @@ export default {
     toggleArtistOverlay (artist) {
       this.activeArtist = artist
       this.artistOverlayActive = !this.artistOverlayActive
+      if (this.artistOverlayActive) {
+        document.body.className += 'noScroll'
+      } else {
+        document.body.className =
+            document.body.className.replace(/\bnoScroll\b/, '')
+      }
     }
   }
 }
@@ -74,6 +84,10 @@ export default {
 
 #site-container {
   position: relative;
+  margin: 0 auto;
+}
+
+.site-inner {
   max-width: 1440px;
   margin: 0 auto;
 }

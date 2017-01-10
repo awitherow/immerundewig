@@ -12,6 +12,14 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   color: $gold;
   margin: 0;
+
+  .noScroll {
+    overflow: hidden;
+  }
+}
+
+body.noScroll { /* ...or body.dialogShowing */
+  overflow: hidden;
 }
 
 // forms

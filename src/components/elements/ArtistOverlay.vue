@@ -50,6 +50,7 @@ export default {
 #artist-info-overlay {
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 
   @media(min-width: 768px) {
     padding: 25px 25px 0 25px;
@@ -59,6 +60,7 @@ export default {
       background: white;
       padding: 25px;
       overflow-y: scroll;
+
       .information {
         position: relative;
         .close {
