@@ -46,10 +46,9 @@ const artists = [
   },
   {
     'mainImage': '/static/img/doro_00.png',
-    'name': 'Doro',
+    'name': 'Doro Hoffmann',
     'introParagraphs': [
-      'Drown in Susanne Königs beautiful blend of blackwork and dotwork with her lovely illustrative tattoos.',
-      'If you have a knack for blackwork illustrations and whimsical designs, then we\'re going to warn you firsthand that you just might fall hard for Susanne Königs lovely tattoos.'
+      'Papier, Haut, Stoff - Ich arbeite gerne handwerklich und bin schnell für neue Projekte zu begeistern.', 'Seit April 2016 unterstützt Doro Immer und Ewig als Auszubildende. Ihre Zeichnungen und Tattoos sind vor allem von westlichen Traditionals beeinflusst, aber Sie ist noch auf der Suche nach Ihrer ganz persönlichen stilistischen Nische.'
     ],
     contact: 'doro@immerundewig-tattooing.de',
     popupImages: [
