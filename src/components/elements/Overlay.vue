@@ -1,7 +1,6 @@
 <template>
   <transition name="fade">
     <div class="overlay white"
-         id="artist-info-overlay"
          v-if="overlayActive">
 
       <div class="inner">
@@ -17,6 +16,9 @@
           <p v-if="activeArtist">
             {{ activeArtist.introParagraphs[0] }}
           </p>
+          <p v-else>
+            Please fill out the form below with information about your ideal tattoo!
+          </p>
 
         </div>
         <div v-if="activeArtist">
@@ -25,6 +27,8 @@
             <img :src="img" />
           </div>
         </div>
+        <smart-form :subject="subject"
+                    :artist="activeArtist" />
       </div>
 
     </div>
@@ -32,8 +36,13 @@
 </template>
 
 <script>
+import SmartForm from './SmartForm'
+
 export default {
   name: 'Overlay',
+  components: {
+    'smart-form': SmartForm
+  },
   props: [
     'toggleOverlay',
     'activeArtist',
@@ -43,7 +52,7 @@ export default {
   updated() {
     console.log({
       artist: this.activeArtist,
-      subject: this.subject
+      email: this.subject
     })
   }
 }
@@ -52,7 +61,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../common/styles/index.scss';
 
-#artist-info-overlay {
+.overlay {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
@@ -118,5 +127,11 @@ export default {
   button {
     border: none;
   }
+}
+
+.smart-form {
+  width: 100%;
+  max-width: 768px;
+  margin-top: 25px;
 }
 </style>
