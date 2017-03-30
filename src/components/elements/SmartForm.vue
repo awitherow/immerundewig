@@ -99,6 +99,7 @@ export default {
         width: 45px;
         text-align: center;
       }
+
       input:nth-of-type(2) {
         margin-left: 5px;
       }

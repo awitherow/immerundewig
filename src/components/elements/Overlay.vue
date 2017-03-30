@@ -20,15 +20,28 @@
             Please fill out the form below with information about your ideal tattoo!
           </p>
 
+          <div v-if="activeArtist"
+               class="button-container button-container">
+            <button @click="toggleView('artist')"
+                    v-bind:class="artistBtnClass">GALLERIE</button>
+            <button @click="toggleView('mail')"
+                    v-bind:class="mailBtnClass">KONTAKT</button>
+          </div>
+
         </div>
-        <div v-if="activeArtist">
+
+        <div v-if="activeArtist && activeView === 'artist'">
           <div class="images"
                v-for="img in activeArtist.popupImages">
             <img :src="img" />
           </div>
         </div>
-        <smart-form :subject="subject"
-                    :artist="activeArtist" />
+        <div class="form-container"
+             v-else>
+          <smart-form id="form"
+                      :subject="subject"
+                      :artist="activeArtist" />
+        </div>
       </div>
 
     </div>
@@ -49,11 +62,32 @@ export default {
     'overlayActive',
     'subject'
   ],
+  data: () => ({
+    activeView: 'artist'
+  }),
+  methods: {
+    toggleView(newView) {
+      this.activeView = newView
+    }
+  },
+  computed: {
+    mailBtnClass() {
+      return this.activeView === 'mail' ? 'filled' : 'inactive'
+    },
+    artistBtnClass() {
+      return this.activeView === 'artist' ? 'filled' : 'inactive'
+    }
+  },
   updated() {
-    console.log({
-      artist: this.activeArtist,
-      email: this.subject
-    })
+    if (!this.activeArtist && !this.subject) {
+      this.activeView = 'artist'
+    }
+
+    if (this.subject === 'contact-request') {
+      this.activeView = 'mail'
+      this.subject = undefined
+    }
+    console.log(this.subject)
   }
 }
 </script>
@@ -67,7 +101,6 @@ export default {
   overflow-y: scroll;
 
   @media(min-width: 768px) {
-    padding: 25px 25px 0 25px;
     background: rgba(0, 0, 0, 0.5);
 
     .inner {
@@ -77,6 +110,9 @@ export default {
 
       .information {
         position: relative;
+        width: 100%;
+        max-width: 768px;
+
         .close {
           position: absolute;
           right: 10px;
@@ -84,10 +120,6 @@ export default {
         }
       }
     }
-  }
-
-  @media(min-width: 1024px) {
-    padding: 50px 50px 0 50px;
   }
 
   .inner {
@@ -129,18 +161,36 @@ export default {
   }
 }
 
-.direkt-container {
-  margin: 50px 0 25px 0;
+.button-container {
+  margin: 25px 0 0 0;
 
-  .button {
+  button {
     font-size: 12px;
     letter-spacing: 1.5px;
+    min-width: 250px;
+    outline: none;
+    border: 1px solid $gold;
+    margin: 5px 0;
   }
+}
+
+@media(min-width: 768px) {
+  button {
+    margin: 0;
+  }
+  button:first-of-type {
+    margin-right: 5px;
+  }
+}
+
+.form-container {
+  padding: 10px;
+  width: 96%;
+  max-width: 768px;
 }
 
 .smart-form {
   width: 100%;
   max-width: 768px;
-  margin-top: 25px;
 }
 </style>

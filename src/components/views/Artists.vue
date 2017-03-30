@@ -10,12 +10,10 @@
         </p>
         <div class="button-group">
           <button class="filled"
-                  @click="toggleOverlay({
-                    artist, email: 'personal-request'
-                  })">
+                  @click="toggleOverlay({ artist })">
             {{ arbeit }}
           </button>
-          <button>{{ kontakt }}</button>
+          <button @click="toggleOverlay({ artist, email: 'contact-request' })">{{ kontakt }}</button>
         </div>
       </div>
     </div>
