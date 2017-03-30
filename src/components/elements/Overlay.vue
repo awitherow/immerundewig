@@ -129,6 +129,15 @@ export default {
   }
 }
 
+.direkt-container {
+  margin: 50px 0 25px 0;
+
+  .button {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+}
+
 .smart-form {
   width: 100%;
   max-width: 768px;

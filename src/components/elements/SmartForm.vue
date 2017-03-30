@@ -16,6 +16,9 @@
              v-else
              v-model="field.input" />
     </div>
+    <button class="stretch filled">
+      ABSCHICKEN
+    </button>
   </form>
 </template>
 
@@ -36,7 +39,7 @@ export default {
       {
         label: 'deine email addresse',
         input: '',
-        type: 'input'
+        type: 'email'
       },
       {
         label: 'körperstelle',
@@ -101,5 +104,12 @@ export default {
       }
     }
   }
+}
+
+.stretch {
+  width: 100%;
+  padding: 20px;
+  font-size: 16px;
+  letter-spacing: 2px;
 }
 </style>

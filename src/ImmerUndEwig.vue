@@ -22,6 +22,7 @@
       <artists :toggleOverlay="toggleOverlay"
                :overlayActive="overlayActive" />
     </div>
+
     <site-footer />
 
   </div>
