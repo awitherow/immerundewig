@@ -1,28 +1,29 @@
 <template>
   <transition name="fade">
-    <div
-      class="overlay white"
-      id="artist-info-overlay"
-      v-if="artistOverlayActive">
+    <div class="overlay white"
+         id="artist-info-overlay"
+         v-if="overlayActive">
 
       <div class="inner">
         <div class="information">
-          <button
-            @click="toggleArtistOverlay"
-            v-show="artistOverlayActive"
-            class="close"
-            >
+          <button @click="toggleOverlay"
+                  v-show="overlayActive"
+                  class="close">
             <img src="/static/icons/close.png" />
           </button>
 
-          <h1>{{ activeArtist.name }}</h1>
-          <p>
+          <h1 v-if="activeArtist">{{ activeArtist.name }}</h1>
+          <h1 v-else>Contact Immer und Ewig</h1>
+          <p v-if="activeArtist">
             {{ activeArtist.introParagraphs[0] }}
           </p>
 
         </div>
-        <div class="images" v-for="img in activeArtist.popupImages">
-          <img :src="img" />
+        <div v-if="activeArtist">
+          <div class="images"
+               v-for="img in activeArtist.popupImages">
+            <img :src="img" />
+          </div>
         </div>
       </div>
 
@@ -32,14 +33,18 @@
 
 <script>
 export default {
-  name: 'ArtistOverlay',
+  name: 'Overlay',
   props: [
-    'toggleArtistOverlay',
+    'toggleOverlay',
     'activeArtist',
-    'artistOverlayActive'
+    'overlayActive',
+    'subject'
   ],
-  updated () {
-    console.log(this.activeArtist)
+  updated() {
+    console.log({
+      artist: this.activeArtist,
+      subject: this.subject
+    })
   }
 }
 </script>
@@ -54,7 +59,7 @@ export default {
 
   @media(min-width: 768px) {
     padding: 25px 25px 0 25px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
 
     .inner {
       background: white;
