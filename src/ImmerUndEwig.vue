@@ -1,31 +1,25 @@
 <template>
-  <div id="site-container">
+  <div id="site-container"
+       name="home">
 
-    <SiteHeader
-      :toggleMenuLinks="toggleMenuLinks"
-      :menuLinksActive="menuLinksActive"
-      />
+    <SiteHeader :toggleMenuLinks="toggleMenuLinks"
+                :menuLinksActive="menuLinksActive"
+                :menuLinks="menuLinks" />
 
-    <MenuLinks
-      :menuLinksActive="menuLinksActive"
-      :toggleMenuLinks="toggleMenuLinks"
-      />
+    <MenuLinks :menuLinksActive="menuLinksActive"
+               :toggleMenuLinks="toggleMenuLinks"
+               :menuLinks="menuLinks" />
 
-    <ArtistOverlay
-      :activeArtist="activeArtist"
-      :artistOverlayActive="artistOverlayActive"
-      :toggleArtistOverlay="toggleArtistOverlay"
-      />
-
+    <ArtistOverlay :activeArtist="activeArtist"
+                   :artistOverlayActive="artistOverlayActive"
+                   :toggleArtistOverlay="toggleArtistOverlay" />
 
     <Introduction />
 
     <div class="site-inner">
       <Studio />
-      <Artists
-        :toggleArtistOverlay="toggleArtistOverlay"
-        :artistOverlayActive="artistOverlayActive"
-        />
+      <Artists :toggleArtistOverlay="toggleArtistOverlay"
+               :artistOverlayActive="artistOverlayActive" />
     </div>
     <SiteFooter />
 
@@ -55,20 +49,34 @@ export default {
   data: () => ({
     menuLinksActive: false,
     artistOverlayActive: false,
-    activeArtist: undefined
+    activeArtist: undefined,
+    menuLinks: [
+      {
+        text: 'Home',
+        href: '#home'
+      },
+      {
+        text: 'Studio',
+        href: '#studio'
+      },
+      {
+        text: 'Artists',
+        href: '#artists'
+      }
+    ]
   }),
   methods: {
-    toggleMenuLinks () {
+    toggleMenuLinks() {
       this.menuLinksActive = !this.menuLinksActive
     },
-    toggleArtistOverlay (artist) {
+    toggleArtistOverlay(artist) {
       this.activeArtist = artist
       this.artistOverlayActive = !this.artistOverlayActive
       if (this.artistOverlayActive) {
         document.body.className += 'noScroll'
       } else {
         document.body.className =
-            document.body.className.replace(/\bnoScroll\b/, '')
+          document.body.className.replace(/\bnoScroll\b/, '')
       }
     }
   }
