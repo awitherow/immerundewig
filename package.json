@@ -10,6 +10,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "smooth-scroll": "cferdinandi/smooth-scroll",
     "vue": "^2.0.1"
   },
   "devDependencies": {
