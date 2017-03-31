@@ -12,7 +12,7 @@
           </button>
 
           <h1 v-if="activeArtist">{{ activeArtist.name }}</h1>
-          <h1 v-else>Contact Immer und Ewig</h1>
+          <h1 v-else>Kontakt Immer und Ewig</h1>
           <p v-if="activeArtist">
             {{ activeArtist.introParagraphs[0] }}
           </p>

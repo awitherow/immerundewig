@@ -53,7 +53,6 @@ export default {
   data: () => ({
     menuLinksActive: false,
     overlayActive: false,
-    smartFormActive: false,
     activeArtist: undefined,
     subject: undefined,
     menuLinks: [
