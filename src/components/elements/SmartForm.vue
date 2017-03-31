@@ -1,5 +1,5 @@
 <template>
-  <form class="smart-form">
+  <div class="smart-form">
     <div class="form-object"
          v-for="field in fields">
       <label>{{ field.label }}</label>
@@ -16,10 +16,11 @@
              v-else
              v-model="field.input" />
     </div>
-    <button class="stretch filled">
+    <button @click="prepareFormInput"
+            class="stretch filled">
       ABSCHICKEN
     </button>
-  </form>
+  </div>
 </template>
 
 <script>
@@ -33,27 +34,32 @@ export default {
     fields: [
       {
         label: 'dein name',
+        id: 'name',
         input: '',
-        type: 'input'
+        type: 'text'
       },
       {
         label: 'deine email addresse',
+        id: 'email',
         input: '',
         type: 'email'
       },
       {
         label: 'körperstelle',
+        id: 'where',
         input: '',
-        type: 'input'
+        type: 'text'
       },
       {
         label: 'ungefähre grösse in cm (breite x höhe)',
+        id: 'dimen',
         height: '',
         width: '',
         type: 'multi-number'
       },
       {
         label: 'beschreibung des tattos',
+        id: 'desc',
         input: '',
         type: 'textarea'
       }
@@ -61,7 +67,16 @@ export default {
   }),
   methods: {
     prepareFormInput() {
+      let preparedInput = {}
 
+      this.fields.map(f => {
+        preparedInput[f.id] = (f.id !== 'dimen') ? f.input : {
+          height: f.height,
+          width: f.width
+        }
+      })
+
+      console.log(preparedInput)
     }
   }
 }
