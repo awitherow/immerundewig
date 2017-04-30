@@ -24,7 +24,7 @@ body.noScroll { /* ...or body.dialogShowing */
 
 // forms
 
-button {
+button, .button {
   font-family: 'Roboto Condensed', sans-serif;
   border: 1px solid $gold;
   background: none;
@@ -32,6 +32,7 @@ button {
   text-transform: uppercase;
   padding: 15px 20px;
   letter-spacing: 1px;
+  text-decoration: none;
 
   &:hover {
     cursor: pointer;

@@ -76,6 +76,10 @@ export default {
     border-bottom: 2px solid $gold;
   }
 
+  .menu-links {
+    display: none;
+  }
+
   @media(min-width: 768px) {
     .menu-button {
       display: none;
